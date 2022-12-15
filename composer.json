@@ -1,0 +1,7 @@
+{
+  "name": "jolution/composer-wp-helper-plugin",
+  "description": "Helper Plugin for Composer Requirements",
+  "require": {
+    "php": ">=7.4"
+  }
+}
