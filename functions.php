@@ -3,23 +3,23 @@
 /**
  * @link              https://jolution.de
  * @since             1.0.0
- * @package           Composer_Wp_Helper
+ * @package           Composer_Helper
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Composer Helper
- * Plugin URI:        https://github.com/jolution/composer-wp-helper
+ * Plugin Name:       Composer Helper
+ * Plugin URI:        https://github.com/jolution/composer-helper
  * Description:       Helper Plugin for generate Requirements for Composer based on installed Plugins.
  * Version:           1.0.0
  * Author:            Julian Kasimir
  * Author URI:        https://jolution.de
  * License:           GPL-3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.en.html
- * Text Domain:       composer-wp-helper
+ * Text Domain:       composer-helper
  * Domain Path:       /languages
  */
 
 // Namespace
-namespace Jolution\ComposerWpHelperPlugin;
+namespace Jolution\ComposerHelperPlugin;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -28,10 +28,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 function add_settings_page() {
 	add_options_page(
-		'WP Composer Helper',
+		'Composer Helper',
 		'Composer Helper',
 		'manage_options',
-		'composer-wp-helper', // page slug (options-general.php?page=wp-configure-cors-origin)
+		'composer-helper', // page slug (options-general.php?page=wp-configure-cors-origin)
 		__NAMESPACE__ . '\render_settings_page'
 	);
 }
@@ -46,15 +46,8 @@ function render_settings_page() {
 
 	$active_plugins        = get_option( 'active_plugins' );
 	$all_plugins           = get_plugins();
-	$premium_plugins       = [ 'borlabs-cookie', 'zrm-posfinder', 'revslider', 'divi-blog-extras' ];
+	$premium_plugins       = [ 'borlabs-cookie', 'revslider', 'divi-blog-extras' ];
 	$premium_plugins_found = [];
-//	$activated_plugins = array();
-
-	/*foreach ( $active_plugins as $plugin ) {
-		if ( isset( $all_plugins[ $plugin ] ) ) {
-			$activated_plugins[] = $all_plugins[ $plugin ];
-        }
-	}*/
 
 	// @TODO: add options to change repository to github/Composer
 	$counter = 0;
@@ -76,7 +69,7 @@ function render_settings_page() {
 	}
 	$code .= '},';
 	?>
-    <h2>WordPress Composer Helper</h2>
+    <h2>Composer Helper</h2>
     <pre style="white-space: pre-wrap">
 		<?php echo $code; ?>
     </pre>

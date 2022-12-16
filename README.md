@@ -1,2 +1,2 @@
-# composer-wp-helper
-WordPress Composer Helper
+# composer-helper
+Composer Helper
