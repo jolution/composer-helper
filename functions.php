@@ -8,12 +8,12 @@
  * @wordpress-plugin
  * Plugin Name:       WordPress Composer Helper
  * Plugin URI:        https://github.com/jolution/composer-wp-helper
- * Description:       Test
+ * Description:       Helper Plugin for generate Requirements for Composer based on installed Plugins.
  * Version:           1.0.0
- * Author:            Julian
+ * Author:            Julian Kasimir
  * Author URI:        https://jolution.de
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.en.html
  * Text Domain:       composer-wp-helper
  * Domain Path:       /languages
  */
@@ -46,7 +46,7 @@ function render_settings_page() {
 
 	$active_plugins        = get_option( 'active_plugins' );
 	$all_plugins           = get_plugins();
-	$premium_plugins       = [ 'borlabs-cookie', 'zrm-posfinder' ];
+	$premium_plugins       = [ 'borlabs-cookie', 'zrm-posfinder', 'revslider', 'divi-blog-extras' ];
 	$premium_plugins_found = [];
 //	$activated_plugins = array();
 
